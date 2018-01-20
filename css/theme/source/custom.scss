@@ -1,0 +1,58 @@
+/**
+ * Custom theme
+ *
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+/**
+ *
+ */
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+
+// fonts go here
+$headingFont: 'League Gothic', Impact, sans-serif;
+
+// color setting goes here
+$base1:    #5a5275;
+$base2:   #353145;
+
+$text1:   #f77f7b;
+$text2:    #ffd5d3;
+$text3:    #bffbda;
+$text4:   #fbf140;
+$text5:   #e5c021;
+$text6:   #ffffff;
+
+
+// Override theme settings (see ../template/settings.scss)
+
+// background color of slides
+$backgroundColor: $base2;
+
+// text colors
+$mainColor: $text6;
+$headingColor: $text1;
+
+$linkColor: $text3;
+$linkColorHover: lighten( $text3, 20% );
+
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------

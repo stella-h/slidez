@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title> god help me</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/custom.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1> Redux <br/>
+          what the f*** </h1>
+        </section>
+
+        <section>
+          <h1>Hello! </h1>
+          <p class="fragment"> Stella Halena </p>
+          <p class="fragment"> Ray White Digital Team </p>
+          <p class="fragment"> @stellaahaha </p>
+          <!-- <img src="http://i.giphy.com/l46CiOKIH8sEhDlsc.gif" align="right" alt="" height="40px"> -->
+        </section>
+
+        <section>
+          <h2> What is Redux ? </h2>
+          <p> Redux is a state management system </p>
+          <p> but what does that mean ?</p>
+        </section>
+
+        <section>
+          <h1> What is state ? </h1>
+          <p> state refers to the status of your application </p>
+          <p> user logged in ? </p>
+          <p> was the button clicked ? </p>
+          <p> is there a name ?</p>
+
+          <p> https://www.youtube.com/watch?v=jRtdbSKWFqk </p>
+        </section>
+
+        <section>
+          <h1> jQuery</h1>
+          <pre>
+            <code data-trim data-noescape>
+            if ($('#modal').hasClass('active')) {
+              showSubscribeButton();
+            }
+          </code>
+        </pre>
+        <p> checking for the current <i>state</i> of a modal </p>
+      </section>
+
+      <section>
+        <h1> jQuery </h1>
+        <pre>
+          <code data-trim data-noescape>
+            if ($('#modal').hasClass('active')) {
+              showSubscribeButton();
+            }
+
+            if ($('#userPanel').hasClass('loggedIn')) {
+              showLogOut();
+            }
+
+            if ($('#button').hasClass('clicked')) {
+              showItem();
+            }
+          </code>
+        </pre>
+        <p> checking state of 3 different elements </p>
+      </section>
+
+      <section>
+        <h1> Redux </h1>
+        <pre>
+          <code data-trim data-noescape>
+          stateTree: {
+           modal: { active: true, subscribe: false }
+           user: { name: robin robins , active: true },
+          };
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2> have you heard of our lord saviour redux ? </h2>
+        <p> giant object, everything at a glance </p>
+        <p> persistant state across multiple components (react) </p>
+        <p> strict data changes through dispatching action  </p>
+        <p> set the state on initalization </p>
+        <p> any changes - updating state </p>
+        <p> https://medium.freecodecamp.org/whats-so-great-about-redux-ac16f1cc0f8b </p>
+      </section>
+
+      <section>
+        <h1> How redux work </h1>
+        <p> we use the redux methods </p>
+        <p class="fragment"> action, reducers, store </p>
+        <p class="fragment"> 1 way change, 1 way access </p>
+      </section>
+
+      <section>
+        <h1> redux diagram  </h1>
+        <img src="https://media.giphy.com/media/z6PIWtdarqS3e/giphy-downsized.gif" alt="">
+      </section>
+
+      <section>
+        <h1> action </h1>
+        <pre>
+         <code data-trim data-noescape>
+          {
+            type: SELECT_USER,
+            name: 'billi',
+            index,
+          }
+        </code>
+      </pre>
+      </section>
+
+        <section>
+        <pre>
+          <code data-trim data-noescape>
+            *** EXAMPLE OF ACTION IN CONTEXT ***
+            - string constant
+            - how to call the action
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <pre>
+          <code data-trim data-noescape>
+            *** ACTION CREATOR FUNCTION ***
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h1> action </h1>
+        <p> WHAT happened </p>
+        <p> dispatch an action </p>
+        <p> plain object </p>
+        <p> has to have a 'TYPE' </p>
+        <p> typically defined as as string constants</p>
+        <p> once your app is big enough, you could seperate them out</p>
+        <p> action creators </p>
+      </section>
+
+      <section>
+        <h1> reducer </h1>
+        <pre>
+          <code data-trim data-noescape>
+          funtion nameOfReducer (previousState, action) {
+            return newState
+          }
+          </code>
+        </pre>
+
+        <pre class="fragment">
+          <code data-trim data-noescape>
+            nameOfReducer (previousState, action) => newState
+          </code>
+      </pre>
+      </section>
+
+      <section>
+        <pre>
+          <code data-trim data-noescape>
+            *** EXAMPLE OF REDUCER IN CONTEXT ***
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h1> reducer </h1>
+        <p> HOW it happened </p>
+        <p> pure functions </p>
+        <p> no database / network calls </p>
+        <p> doesn't modify, returns a new array </p>
+        <p> typically written as case and switch statement</p>
+      </section>
+
+      <section>
+        <h1> Store </h1>
+        <pre>
+          <code data-trim data-noescape>
+            *** EXAMPLE OF STORE ***
+          </code>
+        </pre>
+      </section>
+
+       <section>
+        <h1> Store </h1>
+        <pre>
+          <code data-trim data-noescape>
+            *** EXAMPLE OF STORE IN CONTEXT ***
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h1> Store </h1>
+        <ul>
+          <li> holds the application state </li>
+          <li> access via `getState` </li>
+          <li> update via `dispatch(action)`</li>
+          <li> only 1 store per application </li>
+        </ul>
+      </section>
+
+
+
+      <section>
+        <p> looking at them in more context </p>
+      </section>
+
+      <section>
+        <img src="https://media.giphy.com/media/OPU6wzx8JrHna/200w_d.gif" alt=""/>
+      </section>
+
+      <section>
+        <section data-background-image="https://media.giphy.com/media/OPU6wzx8JrHna/200w_d.gif">
+      </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+      });
+
+      Reveal.configure({
+        progress: true,
+        controls: false,
+      });
+    </script>
+  </body>
+</html>
