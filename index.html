@@ -38,11 +38,8 @@
         <section>
           <h1> What is state ? </h1>
           <p class="fragment"> state : status of your application </p>
-          <ul class="fragment">
-            <li> user logged in ?  </li>
-            <li> was the button clicked ?  </li>
-            <li> is there a name ? </li>
-          </ul>
+          <p class="fragment"> jQuery' - DOM </p>
+          <p class="fragment"> Redux - not in the DOM, in one place in an object </p>
           <br/>
         </section>
 
@@ -84,14 +81,18 @@
           <code data-trim data-noescape>
           stateTree: {
            modal: { active: true, subscribe: false }
-           user: { name: robin robins , active: true },
+           user: { name: 'robin robins' , active: true },
           };
           </code>
         </pre>
       </section>
 
       <section>
-        <h2> have you heard of our lord saviour redux ? </h2>
+        <h1> have you heard of our lord and saviour redux ? </h1>
+      </section>
+
+      <section>
+        <h1> have you heard of our lord and saviour redux ? </h1>
         <p class="fragment"> 1 vs many store (flux) </p>
         <p class="fragment"> giant object - everything at a glance </p>
         <p class="fragment"> persistent state across multiple components (react) </p>
@@ -113,14 +114,14 @@
 
       <section>
         <h1> action </h1>
-        <p> WHAT happened </p>
-        <p> dispatch an action </p>
-        <p> plain object </p>
-        <p> source of info for the store</p>
-        <p> has to have a 'TYPE' </p>
-        <p> typically defined as as string constants</p>
-        <p> separate when it gets too big</p>
-        <p> action creators </p>
+        <p class="fragment"> WHAT happened </p>
+        <p class="fragment"> dispatch an action </p>
+        <p class="fragment"> plain object </p>
+        <p class="fragment"> source of info for the store</p>
+        <p class="fragment"> has to have a 'TYPE' </p>
+        <p class="fragment"> typically defined as as string constants</p>
+        <p class="fragment"> separate when it gets too big</p>
+        <p class="fragment"> action creators </p>
       </section>
 
       <section>
@@ -147,6 +148,11 @@
             type: SELECT_USER,
             name: 'billi',
             index: 3,
+          },
+          {
+            type: SELECT_USER,
+            name: 'robin',
+            index: 3,
           }
         </code>
       </pre>
@@ -154,10 +160,11 @@
 
       <section>
         <h1> action creators </h1>
-        <p> function that creates action. </p>
-        <p> action represents an event </p>
-        <p> gotta type out each actions by hand (copy & paste) </p>
-        <p> typos & time consuming </p>
+        <p class="fragment"> function that creates action. </p>
+        <p class="fragment"> creates the same data shape </p>
+        <p class="fragment"> right keys & values </p>
+        <p class="fragment"> gotta type out each actions by hand (copy & paste) </p>
+        <p class="fragment"> typos, errors & time consuming </p>
       </section>
 
       <section>
@@ -193,12 +200,12 @@
 
       <section>
         <h1> reducer </h1>
-        <p> HOW it happened </p>
-        <p> how the state changes </p>
-        <p> pure functions </p>
-        <p> no database / network calls </p>
-        <p> doesn't modify, returns a <b> new array </b></p>
-        <p> typically written as case and switch statement</p>
+        <p class="fragment"> HOW it happened </p>
+        <p class="fragment"> how the state changes </p>
+        <p class="fragment"> pure functions </p>
+        <p class="fragment"> no database / network calls </p>
+        <p class="fragment"> doesn't modify, returns a <b> new array </b></p>
+        <p class="fragment"> typically written as case and switch statement</p>
       </section>
 
       <section>
@@ -288,10 +295,6 @@
       <section>
         <h1> References</h1>
         <ul>
-          <li>
-            <a href="https://www.youtube.com/watch?v=jRtdbSKWFqk">
-            what's state ? </a>
-          </li>
           <li>
             <a href="https://medium.freecodecamp.org/whats-so-great-about-redux-ac16f1cc0f8b">
               what's so great about redux? </a>
