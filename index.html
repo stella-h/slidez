@@ -18,7 +18,7 @@
       <div class="slides">
         <section>
           <h1> Redux <br/>
-          what the f*** </h1>
+          what the fux </h1>
         </section>
 
         <section>
@@ -31,18 +31,19 @@
 
         <section>
           <h2> What is Redux ? </h2>
-          <p> Redux is a state management system </p>
-          <p> but what does that mean ?</p>
+          <p class="fragment"> Redux is a state management system </p>
+          <p class="fragment"> What does that mean ?</p>
         </section>
 
         <section>
           <h1> What is state ? </h1>
-          <p> state refers to the status of your application </p>
-          <p> user logged in ? </p>
-          <p> was the button clicked ? </p>
-          <p> is there a name ?</p>
-
-          <p> https://www.youtube.com/watch?v=jRtdbSKWFqk </p>
+          <p class="fragment"> state : status of your application </p>
+          <ul class="fragment">
+            <li> user logged in ?  </li>
+            <li> was the button clicked ?  </li>
+            <li> is there a name ? </li>
+          </ul>
+          <br/>
         </section>
 
         <section>
@@ -54,7 +55,7 @@
             }
           </code>
         </pre>
-        <p> checking for the current <i>state</i> of a modal </p>
+        <p class="fragment"> checking for the current <i>state</i> of a modal </p>
       </section>
 
       <section>
@@ -91,55 +92,23 @@
 
       <section>
         <h2> have you heard of our lord saviour redux ? </h2>
-        <p> giant object, everything at a glance </p>
-        <p> persistant state across multiple components (react) </p>
-        <p> strict data changes through dispatching action  </p>
-        <p> set the state on initalization </p>
-        <p> any changes - updating state </p>
-        <p> https://medium.freecodecamp.org/whats-so-great-about-redux-ac16f1cc0f8b </p>
+        <p class="fragment"> 1 vs many store (flux) </p>
+        <p class="fragment"> giant object - everything at a glance </p>
+        <p class="fragment"> persistent state across multiple components (react) </p>
+        <p class="fragment"> strict data changes through dispatching action  </p>
+        <p class="fragment"> set the state on initalization </p>
+        <p class="fragment"> any changes - updating state </p>
       </section>
 
       <section>
-        <h1> How redux work </h1>
+        <h1> How redux works </h1>
         <p> we use the redux methods </p>
         <p class="fragment"> action, reducers, store </p>
         <p class="fragment"> 1 way change, 1 way access </p>
       </section>
 
       <section>
-        <h1> redux diagram  </h1>
-        <img src="https://media.giphy.com/media/z6PIWtdarqS3e/giphy-downsized.gif" alt="">
-      </section>
-
-      <section>
-        <h1> action </h1>
-        <pre>
-         <code data-trim data-noescape>
-          {
-            type: SELECT_USER,
-            name: 'billi',
-            index,
-          }
-        </code>
-      </pre>
-      </section>
-
-        <section>
-        <pre>
-          <code data-trim data-noescape>
-            *** EXAMPLE OF ACTION IN CONTEXT ***
-            - string constant
-            - how to call the action
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <pre>
-          <code data-trim data-noescape>
-            *** ACTION CREATOR FUNCTION ***
-          </code>
-        </pre>
+        <h1> redux in a diagram </h1>
       </section>
 
       <section>
@@ -147,33 +116,77 @@
         <p> WHAT happened </p>
         <p> dispatch an action </p>
         <p> plain object </p>
+        <p> source of info for the store</p>
         <p> has to have a 'TYPE' </p>
         <p> typically defined as as string constants</p>
-        <p> once your app is big enough, you could seperate them out</p>
+        <p> separate when it gets too big</p>
         <p> action creators </p>
       </section>
 
       <section>
-        <h1> reducer </h1>
+        <h1> action </h1>
         <pre>
-          <code data-trim data-noescape>
-          funtion nameOfReducer (previousState, action) {
-            return newState
+         <code data-trim data-noescape>
+          {
+            type: 'SELECT_USER',
           }
-          </code>
-        </pre>
+        </code>
+      </pre>
 
-        <pre class="fragment">
-          <code data-trim data-noescape>
-            nameOfReducer (previousState, action) => newState
-          </code>
+      </section>
+
+      <section>
+        <h1> action </h1>
+        <pre>
+         <code data-trim data-noescape>
+          // string constant
+          const SELECT_USER = 'SELECT_USER';
+
+          //action
+          {
+            type: SELECT_USER,
+            name: 'billi',
+            index: 3,
+          }
+        </code>
       </pre>
       </section>
 
       <section>
+        <h1> action creators </h1>
+        <p> function that creates action. </p>
+        <p> action represents an event </p>
+        <p> gotta type out each actions by hand (copy & paste) </p>
+        <p> typos & time consuming </p>
+      </section>
+
+      <section>
+        <h1> action creator </h1>
         <pre>
           <code data-trim data-noescape>
-            *** EXAMPLE OF REDUCER IN CONTEXT ***
+            export function selectUser(user, index) {
+
+            return {
+              type: SELECT_USER,
+              user,
+              index,
+            }
+          }
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h1> action creator </h1>
+        <pre>
+          <code data-trim data-noescape>
+            export function selectDish(dish) {
+
+                return {
+                  type: 'DISH_SELECTED',
+                  name: dish,
+              };
+            }
           </code>
         </pre>
       </section>
@@ -181,17 +194,63 @@
       <section>
         <h1> reducer </h1>
         <p> HOW it happened </p>
+        <p> how the state changes </p>
         <p> pure functions </p>
         <p> no database / network calls </p>
-        <p> doesn't modify, returns a new array </p>
+        <p> doesn't modify, returns a <b> new array </b></p>
         <p> typically written as case and switch statement</p>
+      </section>
+
+      <section>
+        <h1> reducer </h1>
+        <pre>
+          <code data-trim data-noescape>
+          funtion nameOfReducer (previousState, action) {
+            switch (action.type) {
+              case :
+                return;
+              case :
+                return;
+              default:
+                return state;
+              };
+            }
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h1> reducer </h1>
+        <pre>
+          <code data-trim data-noescape>
+            export default function(state = initialState, action) {
+              switch (action.type) {
+                case 'DISH_SELECTED':
+                  return action.name
+              }
+              return state;
+            }
+          </code>
+        </pre>
       </section>
 
       <section>
         <h1> Store </h1>
         <pre>
           <code data-trim data-noescape>
-            *** EXAMPLE OF STORE ***
+            {
+              users: [
+                { name: 'robin' , index: 0 },
+                { name: 'blake', index: 1 },
+                { name: 'andy' , index: 2 },
+                { name: 'charlie', index: 3 },
+              ];
+
+              active: [
+                { name: 'andy' , index: 2 },
+                { name: 'charlie', index: 3 },
+              ];
+            }
           </code>
         </pre>
       </section>
@@ -200,7 +259,10 @@
         <h1> Store </h1>
         <pre>
           <code data-trim data-noescape>
-            *** EXAMPLE OF STORE IN CONTEXT ***
+            import { createStore } from 'redux';
+
+            const store = createStore(reducers);
+            console.log(store.getState());
           </code>
         </pre>
       </section>
@@ -211,18 +273,60 @@
           <li> holds the application state </li>
           <li> access via `getState` </li>
           <li> update via `dispatch(action)`</li>
-          <li> only 1 store per application </li>
+          <li> 1 store per application </li>
         </ul>
       </section>
 
-
-
       <section>
-        <p> looking at them in more context </p>
+        <h1> all together now </h1>
       </section>
 
       <section>
         <img src="https://media.giphy.com/media/OPU6wzx8JrHna/200w_d.gif" alt=""/>
+      </section>
+
+      <section>
+        <h1> References</h1>
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=jRtdbSKWFqk">
+            what's state ? </a>
+          </li>
+          <li>
+            <a href="https://medium.freecodecamp.org/whats-so-great-about-redux-ac16f1cc0f8b">
+              what's so great about redux? </a>
+            </li>
+            <li>
+              <a href="https://edgecoders.com/the-difference-between-flux-and-redux-71d31b118c1">
+                flux vs redux </a>
+            </li>
+            <li>
+              <a href="https://redux.js.org/">
+                redux documentation </a>
+            </li>
+            <li>
+              <a href="https://redux.js.org/docs/faq/Actions.html#actions-string-constants">
+                action string constant
+              </a>
+            </li>
+            <li>
+              <a href="https://daveceddia.com/redux-action-creators/">
+                what's action creators
+              </a>
+            </li>
+            <li>
+              <a href="https://travishorn.com/redux-by-example-combined-reducer-with-action-creators-34be581ddb0">
+                someone did todo list with redux example from the redux docs but put
+                it together in a blog post
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/jchappypig/repair-center">
+                something that's not todo list
+              </a>
+            </li>
+        </ul>
+        <br/>
       </section>
 
       <section>

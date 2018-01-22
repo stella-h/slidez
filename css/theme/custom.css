@@ -11,6 +11,11 @@ html * {
   color-profile: sRGB;
   rendering-intent: auto; }
 
+.footer {
+  position: absolute;
+  left: 35%;
+  bottom: 1em; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
