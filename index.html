@@ -241,8 +241,28 @@
         </pre>
       </section>
 
-      <section>
-        <h1> Store </h1>
+        <section>
+          <h1> Store </h1>
+             <p class="fragment"> holds the application state </p>
+             <p class="fragment"> access via `getState` </p>
+             <p class="fragment"> update via `dispatch(action)`</p>
+             <p class="fragment"> 1 store per application </p>
+        </section>
+
+        <section>
+          <h1> Store </h1>
+          <pre>
+            <code data-trim data-noescape>
+              import { createStore } from 'redux';
+
+              const store = createStore(reducers);
+              console.log(store.getState());
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1> Store </h1>
         <pre>
           <code data-trim data-noescape>
             {
@@ -260,26 +280,6 @@
             }
           </code>
         </pre>
-      </section>
-
-       <section>
-        <h1> Store </h1>
-        <pre>
-          <code data-trim data-noescape>
-            import { createStore } from 'redux';
-
-            const store = createStore(reducers);
-            console.log(store.getState());
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h1> Store </h1>
-           <p class="fragment"> holds the application state </p>
-           <p class="fragment"> access via `getState` </p>
-           <p class="fragment"> update via `dispatch(action)`</p>
-           <p class="fragment"> 1 store per application </p>
       </section>
 
       <section>
